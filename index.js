@@ -124,8 +124,8 @@ io.on("connection", (socket) => {
     console.log(aroom , "why");
   });
 });
-// app.get("/socket.io/", (req, res) => {
-//   res.send("hle");
-// });
+ app.get("/", (req, res) => {
+   res.send("helle from socket ");
+ });
 
-server.listen(9000);
+server.listen( process.env.PORT || 9000);
