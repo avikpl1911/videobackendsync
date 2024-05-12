@@ -93,6 +93,10 @@ io.on("connection", (socket) => {
        io.in(`${roomid}`).emit(`getplaying`,isplaying)
   })
 
+  socket.on("hostsingnal",()=>{
+    io.in(`${roomid}`).emit("hostsignalget")
+  })
+
   socket.on("disconnect", async () => {
     if (aroom[`${roomid}`] && aroom[`${roomid}`].ownerid == socket.id) {
         io.in(`${roomid}`).emit("disconnectclientml","hello");
